@@ -21,7 +21,7 @@ export default function PostsViewPanel() {
   return (
     <div className='postsviewpanel flex md:flex-col gap-2'>
       <div>
-        {isLoading ?  <div><StatusSpinner/></div>  : posts.posts.map(post => {
+        {isLoading ?  <div className='flex justify-center'><StatusSpinner/></div>  : posts.posts.map(post => {
           return <Post post={post}></Post>
         })}
       </div>
