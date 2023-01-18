@@ -16,6 +16,7 @@ export default function PostsViewPanel() {
       .finally(() => setLoading(false))
   }, [])
 
+  console.log(posts.posts)
 
   return (
     <div className='postsviewpanel flex flex-col gap-2'>

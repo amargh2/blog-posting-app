@@ -1,5 +1,6 @@
 export default function Post(props) {
-  const [post, setPost] = props.post;
+  //passing posts to an array because type fussiness (i should have used typescript)
+  const [post, setPost] = [props.post];
 
   return (
     <div className='post flex flex-col gap-1 shadow-md rounded-md'>
