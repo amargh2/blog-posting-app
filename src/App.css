@@ -17,3 +17,11 @@ textarea{
   font-family: 'Roboto', sans-serif;
   font-family: 'Roboto Slab', serif;
 }
+
+.ql-editor{
+  min-height:400px;
+}
+
+input {
+  text-align:center;
+}
