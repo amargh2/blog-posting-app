@@ -1,19 +1,20 @@
 import './App.css';
 import {useState, useEffect} from 'react'
-import SideBar from './components/SideBar'
+import Nav from './components/Nav'
 import Header from './components/Header';
+import EditingPanel from './components/Editor';
 import PostsViewPanel from './components/PostsView';
 function App() {
   //state determines the visible panel (options toggle between posts/new)
-  const [selectedTab, setSelectedTab] = useState('posts');
+  const [selectedTab, setSelectedTab] = useState('edit');
 
   return (
     <div className="App">
+      <div className='flex justify-center'><Nav/></div>
     <div><Header/></div>
-      <div className="grid grid-cols-10">
-        <div><SideBar/></div>
-      <div className='col-start-3 col-span-full md:col-span-6'>
-        {selectedTab === 'posts' ? <PostsViewPanel/> : <div>Component goes here </div>} 
+      <div className="grid grid-cols-10 mx-1">
+      <div className='row-start-2 col-start-2 md:col-start-3 col-span-full md:col-span-6'>
+        {selectedTab === 'posts' ? <PostsViewPanel/> : <EditingPanel/>} 
       </div>
       </div>
     </div>
