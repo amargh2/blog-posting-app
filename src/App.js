@@ -5,7 +5,7 @@ import NewPost from './pages/NewPost'
 import { Routes, Route } from "react-router-dom"
 import Nav from './pages/components/Nav'
 import Header from './pages/components/Header';
-
+import Login from './pages/Login';
 //component class div is the container that holds the current view (post, view, login);
 //layout-setup class sets up 10column grid on medium+ screens and converts to a stacked column layout on mobile
 function App() {
@@ -16,6 +16,7 @@ function App() {
         <div className='nav flex justify-center sm:col-start-1 col-start-4'><Nav/></div>
         <div className='component md:col-start-3 md:col-span-6 col-span-full mx-1'>
           <Routes>
+            <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/' element={<Home/>}></Route>
             <Route path='/new' element={<NewPost/>}></Route>
             <Route path='/posts' element={<ViewPosts/>}></Route>
