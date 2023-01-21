@@ -9,7 +9,7 @@ export default function PostsViewPanel() {
 
   //effect calls api then stores them in state (posts); sets error if error
   useEffect(() => {
-    fetch('http://localhost:3000/posts')
+    fetch('http://localhost:3001/posts')
       .then(response => response.json())
       .then(data => setPosts(data))
       .catch(error => setError(error))
@@ -19,11 +19,12 @@ export default function PostsViewPanel() {
   console.log(posts.posts)
 
   return (
-    <div className='postsviewpanel flex md:flex-col gap-2'>
+    <div className='postsviewpanel flex justify-center md:flex-col gap-2'>
       <div>
         {isLoading ?  <div className='flex justify-center'><StatusSpinner/></div>  : posts.posts.map(post => {
           return <Post post={post}></Post>
         })}
+        {error ?? error}
       </div>
     </div>
   )
