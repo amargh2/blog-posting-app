@@ -8,7 +8,7 @@ export default function Editor() {
   const [subjectValue, setSubjectValue] = useState('');
   
   const submitPost = async () => {
-    await axios.post('http://localhost:3000/posts/new', {
+    await axios.post('http://localhost:3001/posts/new', {
       subject:subjectValue,
       post: postValue
     })
