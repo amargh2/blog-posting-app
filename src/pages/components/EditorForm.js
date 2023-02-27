@@ -10,7 +10,7 @@ export default function Editor() {
   const submitPost = async () => {
     await axios.post('http://localhost:3001/posts/new', {
       subject:subjectValue,
-      post: postValue
+      message: postValue
     })
     .then(response => console.log(response))
     .catch(error => console.log(error))
@@ -27,9 +27,9 @@ export default function Editor() {
           </div>
         </div>
 
-        <ReactQuill theme="snow" value={postValue} height={100} onChange={setPostValue} />
+        <ReactQuill theme="snow" value={postValue} height={100} onChange={setPostValue && console.log(postValue)} />
         <div className='text-sm bg-blue-100 p-2 rounded-md shadow-md justify-center flex'>
-          <button onClick={async () => submitPost()}>Submit Post</button>
+          <button type='button' onClick={async () => submitPost()}>Submit Post</button>
         </div>
       </form>
     </div>

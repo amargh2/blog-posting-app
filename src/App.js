@@ -1,4 +1,5 @@
 import './App.css';
+import axios from 'axios'
 import Home from './pages/Home'
 import ViewPosts from './pages/ViewPosts'
 import NewPost from './pages/NewPost'
@@ -8,6 +9,17 @@ import Header from './pages/components/Header';
 import Login from './pages/Login';
 //component class div is the container that holds the current view (post, view, login);
 //layout-setup class sets up 10column grid on medium+ screens and converts to a stacked column layout on mobile
+
+axios.interceptors.request.use(
+  config => {
+    config.headers.authorization = `Bearer ${localStorage.getItem('token')}`;
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
+  }
+)
+
 function App() {
   return (
     <div className="App">
