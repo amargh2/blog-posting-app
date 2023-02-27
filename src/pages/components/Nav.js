@@ -12,6 +12,11 @@ export default function sideBar() {
           <button>View Posts</button>
         </div>
       </Link>
+      <Link to='/login'>  
+        <div className='option bg-blue-100 px-7 flex justify-center rounded-md shadow-md'>
+          <button>Login</button>
+        </div>
+      </Link>
     </div>
   )
 }
