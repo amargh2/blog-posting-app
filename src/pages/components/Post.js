@@ -7,7 +7,7 @@ export default function Post(props) {
       <div className='flex justify-center subject'>
         <h3 className='p-2'>{props.post.subject}</h3>
       </div>
-        <p>{props.post.message}</p>
+        {props.post.message}
     </div>
   )
 }
